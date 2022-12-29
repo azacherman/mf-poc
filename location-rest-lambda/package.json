@@ -1,0 +1,23 @@
+{
+  "name": "location-rest-lambda",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@middy/core": "^4.0.9",
+    "@middy/http-error-handler": "^4.0.9",
+    "@middy/http-json-body-parser": "^4.0.9",
+    "@middy/validator": "^4.0.9",
+    "@sinclair/typebox": "^0.25.16",
+    "aws-lambda": "^1.0.7",
+    "pino": "^8.8.0",
+    "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.109",
+    "esbuild": "^0.16.12"
+  },
+  "scripts": {
+    "build": "npx esbuild src/index.ts --bundle --platform=node --target=es2020 --outfile=dist/index.js"
+  }
+}

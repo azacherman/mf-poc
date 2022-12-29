@@ -1,0 +1,8 @@
+{
+  "name": "app-sync-poc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Zacherman, Avi M <avi.zacherman@ecoatm.com>",
+  "private": true,
+  "workspaces": ["dog-lambda", "location-rest-lambda", "person-lambda"]
+}
