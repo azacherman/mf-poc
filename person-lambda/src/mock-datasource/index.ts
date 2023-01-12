@@ -1,5 +1,5 @@
 export interface Person {
-  id: number
+  id:  String
   name: String
   city: String
   state: String
@@ -9,7 +9,7 @@ export interface Person {
 
 export const data: Person[] = [
   {
-    id: 1,
+    id: "1",
     name: "Avi",
     city: "Bronx",
     state: "New York",
@@ -17,7 +17,7 @@ export const data: Person[] = [
     occupation: "Software Engineering Manager"
   },
   {
-    id: 2,
+    id: "2",
     name: "Xena",
     city: "Amphipolis",
     state: "Greece",
@@ -25,7 +25,7 @@ export const data: Person[] = [
     occupation: "Warrior Princess"
   },
   {
-    id: 3,
+    id: "3",
     name: "Tony Stark",
     city: "New York",
     state: "New York",

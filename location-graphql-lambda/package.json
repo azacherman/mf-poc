@@ -1,9 +1,10 @@
 {
-  "name": "person-lambda",
+  "name": "location-graphql-lambda",
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
   "dependencies": {
+    "@apollo/datasource-rest": "^4.3.2",
     "@apollo/server": "^4.3.0",
     "@apollo/subgraph": "^2.2.2",
     "@as-integrations/aws-lambda": "^1.1.0",
@@ -14,17 +15,12 @@
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.109",
-    "dotenv": "^16.0.3",
     "esbuild": "^0.16.10",
     "graphql": "^16.6.0",
-    "graphql-tag": "^2.12.6",
-    "rimraf": "^3.0.2",
-    "serverless-plugin-typescript": "^2.1.4",
-    "ts-loader": "^9.4.2",
-    "webpack": "^5.75.0"
+    "serverless-plugin-typescript": "^2.1.4"
   },
   "scripts": {
     "build": "rimraf dist && tsc && cp src/graphql/person.graphql dist/graphql/person.graphql",
-    "publish-subgraph": "rover subgraph publish dogpark-poc-nz045m@current --name person --schema ./src/graphql/person.graphql --routing-url https://xhesrvvjx5osvxwrjvvjljgarq0rerni.lambda-url.us-east-1.on.aws/"
+    "publish-subgraph": "rover subgraph publish dogpark-poc-nz045m@current --name location --schema ./src/graphql/location.graphql --routing-url https://wol4qzlj2pfrfkgmwan6gcyfi40jqznv.lambda-url.us-east-1.on.aws/"
   }
 }

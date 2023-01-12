@@ -1,0 +1,16 @@
+extend schema @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key"])
+
+type Query {
+  findById(id: ID): Person
+  findByCity(city: String): Person
+  people: [Person]
+}
+
+type Person {
+  id: ID
+  name: String
+  city: String
+  state: String
+  height: String
+  occupation: String
+}

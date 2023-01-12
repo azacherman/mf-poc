@@ -4,5 +4,5 @@
   "main": "index.js",
   "author": "Zacherman, Avi M <avi.zacherman@ecoatm.com>",
   "private": true,
-  "workspaces": ["dog-lambda", "location-rest-lambda", "person-lambda"]
+  "workspaces": ["dog-lambda", "location-rest-lambda", "person-lambda", "federation-poc", "location-graphql-lambda"]
 }

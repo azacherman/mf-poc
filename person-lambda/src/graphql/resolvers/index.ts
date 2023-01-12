@@ -4,9 +4,6 @@ import pino from 'pino';
 const logger = pino();
 
 function findById(parent, { id }): Person | undefined{
-  logger.info(arguments);
-  logger.info(id);
-  logger.info(data);
   return data.find(person => person.id === id);
 }
 
@@ -19,5 +16,10 @@ export const resolvers = {
     findById,
     findByCity,
     people: () => data,
+  },
+  Person: {
+    name(parent, args, context) {
+      if(context.req.auth.role != 'can see name') throw new Error
+    }
   }
 }

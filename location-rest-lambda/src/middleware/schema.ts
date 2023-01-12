@@ -3,7 +3,7 @@ import { Static, Type } from "@sinclair/typebox"
 
 const LocationRequest = Type.Object({
   body: Type.Object({
-    id: Type.Number(),
+    id: Type.String(),
   })
 })
 

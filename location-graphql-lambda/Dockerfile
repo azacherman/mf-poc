@@ -1,14 +1,10 @@
 FROM public.ecr.aws/lambda/nodejs:16
 
-RUN npm install -g yarn
-
 COPY dist/ ${LAMBDA_TASK_ROOT}
 
 COPY package.json ${LAMBDA_TASK_ROOT}
 
-RUN yarn install
-
-RUN yarn publish-subgraph
+RUN npm install
 
 CMD ["index.handler"]
 
