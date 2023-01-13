@@ -8,8 +8,6 @@ COPY package.json ${LAMBDA_TASK_ROOT}
 
 RUN yarn install
 
-RUN yarn publish-subgraph
-
 CMD ["index.handler"]
 
 # aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws

@@ -11,8 +11,6 @@ export class LocationRestAPI extends RESTDataSource {
   }
 
   async getLocation(id: string) {
-    console.log('testing')
-    logger.info({id}, 'Testing functionality')
     return this.post(this.baseURL, { body: { id }})
   }
 }

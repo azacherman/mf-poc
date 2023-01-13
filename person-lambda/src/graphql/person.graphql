@@ -7,10 +7,15 @@ type Query {
 }
 
 type Person {
-  id: ID
+  id: ID!
   name: String
   city: String
   state: String
   height: String
   occupation: String
+  favoritePark: Location
+}
+
+type Location @key(fields: "id") {
+  id: ID!
 }

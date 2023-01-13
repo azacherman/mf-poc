@@ -20,7 +20,12 @@
     "serverless-plugin-typescript": "^2.1.4"
   },
   "scripts": {
-    "build": "rimraf dist && tsc && cp src/graphql/person.graphql dist/graphql/person.graphql",
+    "build:docker": "docker build -t location-poc . ",
+    "tag:docker": "docker tag location-poc 119475473042.dkr.ecr.us-east-1.amazonaws.com/location-graph-poc:latest",
+    "push:docker": "docker push 119475473042.dkr.ecr.us-east-1.amazonaws.com/location-graph-poc:latest",
+    "deploy": "aws lambda update-function-code --function-name LocationGraphQLPOC --image-uri 119475473042.dkr.ecr.us-east-1.amazonaws.com/location-graph-poc:latest --architecture arm64",
+    "build-and-deploy": "yarn build && yarn build:docker && yarn tag:docker && yarn push:docker && yarn deploy",
+    "build": "rimraf dist && tsc && cp src/graphql/location.graphql dist/graphql/location.graphql",
     "publish-subgraph": "rover subgraph publish dogpark-poc-nz045m@current --name location --schema ./src/graphql/location.graphql --routing-url https://wol4qzlj2pfrfkgmwan6gcyfi40jqznv.lambda-url.us-east-1.on.aws/"
   }
 }

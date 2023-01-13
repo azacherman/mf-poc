@@ -4,7 +4,8 @@ export interface Person {
   city: String
   state: String
   height: String
-  occupation: String
+  occupation: String,
+  locationId?: String,
 }
 
 export const data: Person[] = [
@@ -14,7 +15,8 @@ export const data: Person[] = [
     city: "Bronx",
     state: "New York",
     height: "5'6\"",
-    occupation: "Software Engineering Manager"
+    occupation: "Software Engineering Manager",
+    locationId: "1",
   },
   {
     id: "2",
@@ -22,7 +24,8 @@ export const data: Person[] = [
     city: "Amphipolis",
     state: "Greece",
     height: "5'10\"",
-    occupation: "Warrior Princess"
+    occupation: "Warrior Princess",
+    locationId: "1",
   },
   {
     id: "3",
@@ -30,6 +33,7 @@ export const data: Person[] = [
     city: "New York",
     state: "New York",
     height: "5'8\"",
-    occupation: "Billionaire"
+    occupation: "Billionaire",
+    locationId: "2",
   },
 ]

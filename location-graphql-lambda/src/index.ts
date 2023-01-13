@@ -1,15 +1,27 @@
 import { ApolloServer } from '@apollo/server';
-import { typeDefs } from './graphql/schema';
 import { resolvers } from './graphql/resolvers';
 import { buildSubgraphSchema } from '@apollo/subgraph';
 import { startServerAndCreateLambdaHandler } from '@as-integrations/aws-lambda';
 import { LocationRestAPI } from './graphql/datasources/index';
+import { readFileSync } from 'fs';
+import { resolve, join } from 'path';
+import gql from 'graphql-tag';
+import pino from 'pino';
 
-// interface GraphQLContext {
-//   location: LocationRestAPI;
-// }
+const logger = pino(
+{
+    // transport: pino.transport({
+    //   target: 'pino/pretty',
+    //   options: { destination: 1 }
+    // }),
+  level: 'trace'
+}
+);
 
+
+const typeDefs = gql(readFileSync(join(resolve('.'), './graphql', 'location.graphql'), 'utf-8'));
 const server = new ApolloServer({
+  logger,
   schema: 
     buildSubgraphSchema({ typeDefs, resolvers }),
 })

@@ -18,8 +18,13 @@ export const resolvers = {
     people: () => data,
   },
   Person: {
-    name(parent, args, context) {
-      if(context.req.auth.role != 'can see name') throw new Error
+    favoritePark({ locationId }) {
+      return { id: locationId };
     }
+  },
+  Location: {
+    __resolveReference: (location) => {
+      return location;
+    },
   }
 }

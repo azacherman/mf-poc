@@ -1,13 +1,17 @@
 extend schema @link(url: "https://specs.apollo.dev/federation/v2.0", import: ["@key"])
 
   type Query {
-    getLocation(id: ID!): Location
+    location(id: ID!): Location
   }
 
-  type Location {
+  type Location @key(fields: "id") {
+    "Name of the park"
      name: String
+     "City the park is in"
      city: String
-     state: String
+     "State the park is in"
+     state: String @deprecated(reason: "state is deprecated as it contains countries")
+     "Address of the park"
      address: String
      id: ID!
   }
