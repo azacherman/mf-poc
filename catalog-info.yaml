@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: mf-poc
+  annotations:
+    github.com/project-slug: azacherman/mf-poc
+spec:
+  type: other
+  lifecycle: unknown
+  owner: azacherman
